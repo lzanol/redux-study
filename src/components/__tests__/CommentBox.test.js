@@ -13,7 +13,7 @@ it('has textarea and button', () => {
 	expect(component.find('button').length).toEqual(1);
 });
 
-describe('textarea', () => {
+describe('textarea specifics', () => {
 	const text = 'Some user comment';
 
 	beforeEach(() => {
