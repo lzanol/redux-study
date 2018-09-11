@@ -8,9 +8,9 @@ let component;
 beforeEach(() => component = mount(<Root><CommentBox /></Root>));
 afterEach(() => component.unmount());
 
-it('has textarea and button', () => {
+it('has textarea and at least one button', () => {
 	expect(component.find('textarea').length).toEqual(1);
-	expect(component.find('button').length).toEqual(1);
+	expect(component.find('button').length).toBeGreaterThan(0);
 });
 
 describe('textarea specifics', () => {

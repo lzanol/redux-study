@@ -15,12 +15,18 @@ class CommentBox extends Component {
 		this.setState({ comment: '' }, () => this.tf.focus());
 	}
 
+	onFetchButton = e => {
+		e.preventDefault();
+		this.props.fetchComments();
+	}
+
 	render() {
 		return <form onSubmit={this.onSubmit}>
 			<h4>Add a comment</h4>
 			<textarea ref={ref => this.tf = ref}
 				onChange={this.onChange} value={this.state.comment} />
-			<div><button>Submit</button></div>
+			<div><button>Submit</button>&nbsp;
+				<button className="fetch-comments" onClick={this.onFetchButton}>Fetch</button></div>
 		</form>
 	}
 }
